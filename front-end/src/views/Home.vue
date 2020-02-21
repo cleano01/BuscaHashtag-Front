@@ -133,9 +133,10 @@ import NavBar from '../componentes/NavBar'
 import axios from 'axios'
 
 let id = 0;
-  function onChange(pagination, filters, sorter) {
+  /*function onChange(pagination, filters, sorter) {
     console.log('params', pagination, filters, sorter);
   }
+  */
 
 export default {
   components: {
@@ -231,7 +232,7 @@ export default {
   },
   
   methods: {
-    onChange,
+    //onChange,
     remove(k){
       const { form } = this;
       // can use data-binding to get
@@ -262,14 +263,12 @@ export default {
     handleSubmit(e){
       e.preventDefault();
       this.form.validateFields((err, values) => {
-        alert(values.names)
         if (!err) {
           this.status_req = true;
           this.conteudo = false
          axios
          .post('http://localhost:3000/api/hashtag/buscar', values.names)
          .then(response => {
-           
            response.data.map((item) =>{
              if(item !== null){
               data.push({
