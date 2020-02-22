@@ -259,7 +259,6 @@ export default {
         keys: nextKeys,
       });
     },
-
     handleSubmit(e){
       e.preventDefault();
       this.form.validateFields((err, values) => {
